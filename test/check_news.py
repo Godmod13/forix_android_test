@@ -2,28 +2,22 @@
 # pip install Appium-Python-Client
 # Then you can paste this into a file and simply run with Python
 
-from appium import webdriver
 import time
-import main_motion
+import test.setup
 
 
-#initialization
-caps = {}
-caps["platformName"] = "Android"
-caps["platformVersion"] = "7.0"
-caps["deviceName"] = "Samsung Galaxy S7"
-caps["app"] = "/Users/antonzapekin/Downloads/app/build/outputs/apk/app-debug.apk"
-driver = webdriver.Remote("http://localhost:4723/wd/hub", caps)
+# #initialization
+test.setup.launch_app()
 
 #swipe News on dasboard
 time.sleep(1)
-first_news = driver.swipe(800, 800, 100, 800)
-second_news = driver.swipe(800, 800, 100, 800)
-third_news = driver.swipe(800, 800, 100, 800)
+first_news = test.setup.driver.swipe(800, 800, 100, 800)
+second_news = test.setup.driver.swipe(800, 800, 100, 800)
+third_news = test.setup.driver.swipe(800, 800, 100, 800)
 
 
 #open all News
-button_array = driver.find_elements_by_id("com.motorsport.forix:id/base_button")
+button_array = test.setup.driver.find_elements_by_id("com.motorsport.forix:id/base_button")
 for button in button_array:
 
     if button.get_attribute("text") == "ALL NEWS":
@@ -31,15 +25,15 @@ for button in button_array:
         break
 
 #swipe news list
-drivers_swipe = driver.swipe(500, 1800, 500, 350, 1500)
+drivers_swipe = test.setup.driver.swipe(500, 1800, 500, 350, 1500)
 
 #open anyone news
 time.sleep(1)
-click_news = driver.find_element_by_id("com.motorsport.forix:id/news_text").click()
+click_news = test.setup.driver.find_element_by_id("com.motorsport.forix:id/news_text").click()
 
 #return to Home page
-main_motion.back_root_home(driver)
+test.main_motion.back_root_home()
 
 
 #quit from app
-driver.quit()
+test.setup.driver.quit()
