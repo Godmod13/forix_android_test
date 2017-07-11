@@ -5,6 +5,7 @@
 
 import time
 import test.setup
+import test.main_motion
 
 
 #initialization

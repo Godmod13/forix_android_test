@@ -8,7 +8,7 @@ def back_root_home():
         button_found = False
         while button_found != True:
             try:
-                main_menu = test.setup.driver.find_element_by_xpath("//android.widget.ImageButton[@content-desc=\"Open navigation drawer\"]")
+                main_menu = test.setup.driver.find_element_by_accessibility_id("Open navigation drawer")
             except NoSuchElementException:
                 test.setup.driver.press_keycode(4)
                 time.sleep(1)

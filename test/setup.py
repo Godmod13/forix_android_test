@@ -7,8 +7,8 @@ def launch_app():
     caps["platformName"] = "Android"
     caps["platformVersion"] = "7.0"
     caps["deviceName"] = "Samsung Galaxy S7"
-    caps["noReset"] = "True"
-    caps["fullReset"] = "False"
+    caps["fullReset"] = False
+    caps["noReset"] = True
     caps["appPackage"] = "com.motorsport.forix"
     caps["appActivity"] = "activity.MainActivity"
     # caps["app"] = "/Users/antonzapekin/Downloads/app/build/outputs/apk/app-debug.apk"
