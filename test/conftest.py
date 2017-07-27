@@ -2,6 +2,7 @@ import pytest
 import datetime
 import os
 from helpers import ensure_dir
+from test.application import Application
 
 
 def pytest_configure(config):
@@ -29,3 +30,12 @@ def device_logger(request):
     logcat_dir = request.config.logcat_dir
     screenshot_dir = request.config.screen_shot_dir
     return DeviceLogger(logcat_dir, screenshot_dir)
+
+
+
+def app(request):
+    fixture = Application()
+    return fixture
+
+
+self

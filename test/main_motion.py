@@ -28,4 +28,25 @@ def back_root_home():
 
 
         elif options.platform == "iOS":
-            main_menu = test.setup.driver.find_element_by_accessibility_id("Dashboard").click()
+            main_menu = test.setup.driver.find_element_by_accessibility_id("home_screen").click()
+
+def swipe_right():
+    d = test.setup.driver.get_window_size()
+    max_width = d.get_Width()
+    max_height = d.get_Height()
+
+    print(max_width)
+    print(max_height)
+    test.setup.driver.swipe(250, 150, 100, 150,1000)
+
+
+def swipe_left():
+    test.setup.driver.swipe(100, 250, 250, 250,1000)
+
+
+def scroll_down():
+    test.setup.driver.swipe(300, 600, 300, 300,1000)
+
+
+def scroll_up():
+    test.setup.driver.swipe(300, 500, 300, 100,1000)
