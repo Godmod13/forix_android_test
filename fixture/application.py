@@ -1,6 +1,7 @@
 from appium import webdriver
-from optparse import OptionParser
-import time
+from test.fixture.navigation import NavigationHelper
+
+from fixture.motion import MotionHelper
 
 
 class Application:
@@ -17,15 +18,8 @@ class Application:
         caps["appActivity"] = "activity.MainActivity"
         caps["app"] = "/Users/antonzapekin/app-debug.apk"
         self.driver = webdriver.Remote("http://localhost:4723/wd/hub", caps)
-
-
-
-    def swipe_news(self):
-        driver = self.driver
-        time.sleep(1)
-        driver.swipe(800, 800, 100, 800)
-
-
+        self.navigation = NavigationHelper(self)
+        self.motion = MotionHelper(self)
 
 
     def destroy(self):
