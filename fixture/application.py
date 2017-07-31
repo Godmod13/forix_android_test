@@ -1,6 +1,5 @@
 from appium import webdriver
 from fixture.navigation import NavigationHelper
-
 from fixture.motion import MotionHelper
 
 
