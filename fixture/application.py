@@ -34,6 +34,7 @@ class Application:
 
         self.navigation = NavigationHelper(self)
         self.motion = MotionHelper(self)
+        self.platform = platform
 
 
 

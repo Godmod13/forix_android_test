@@ -17,5 +17,10 @@ import time
 
 
 def test_windows_size(app):
-    app.motion.swipe_left()
-
+    time.sleep(1)
+    app.navigation.open_events_page()
+    # app.motion.swipe_left()
+    # app.motion.swipe_right()
+    # app.motion.scroll_down()
+    # time.sleep(1)
+    # app.motion.scroll_up()
