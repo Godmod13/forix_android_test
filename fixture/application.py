@@ -1,6 +1,7 @@
 from appium import webdriver
 from fixture.navigation import NavigationHelper
 from fixture.motion import MotionHelper
+from fixture.item import ItemHelper
 
 
 class Application:
@@ -34,6 +35,7 @@ class Application:
 
         self.navigation = NavigationHelper(self)
         self.motion = MotionHelper(self)
+        self.item = ItemHelper(self)
         self.platform = platform
 
 
